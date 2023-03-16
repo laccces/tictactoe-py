@@ -60,7 +60,47 @@ def player_two_choice():
     else:
         print("Error. Please enter a number between 1 and 9 that isn't already taken")
 
+def check_winner():
+  i = 0
+  if empty_board[0][0] == "X" and empty_board[0][1] == "X" and empty_board[0][2] == "X":
+    i += 1
+  elif empty_board[1][0] == "X" and empty_board[1][1] == "X" and empty_board[1][2] == "X":
+    i += 1
+  elif empty_board[2][0] == "X" and empty_board[2][1] == "X" and empty_board[2][2] == "X":
+    i += 1
+  elif empty_board[0][0] == "X" and empty_board[1][1] == "X" and empty_board[2][2] == "X":
+    i += 1
+  elif empty_board[0][2] == "X" and empty_board[1][1] == "X" and empty_board[2][0] == "X":
+    i += 1
+  elif empty_board[0][0] == "X" and empty_board[1][0] == "X" and empty_board[2][0] == "X":
+    i += 1
+  elif empty_board[0][1] == "X" and empty_board[1][1] == "X" and  empty_board[2][1] == "X":
+    i += 1
+  elif empty_board[0][2] == "X" and empty_board[1][2] == "X" and empty_board[2][2] == "X":
+    i += 1
+  elif empty_board[0][0] == "O" and empty_board[0][1] == "O" and empty_board[0][2] == "O":
+    i += 1
+  elif empty_board[1][0] == "O" and empty_board[1][1] == "O" and empty_board[1][2] == "O":
+    i += 1
+  elif empty_board[2][0] == "O" and empty_board[2][1] == "O" and empty_board[2][2] == "O":
+    i += 1
+  elif empty_board[0][0] == "O" and empty_board[1][1] == "O" and empty_board[2][2] == "O":
+    i += 1
+  elif empty_board[0][2] == "O" and empty_board[1][1] == "O" and empty_board[2][0] == "O":
+    i += 1
+  elif empty_board[0][0] == "O" and empty_board[1][0] == "O" and empty_board[2][0] == "O":
+    i += 1
+  elif empty_board[0][1] == "O" and empty_board[1][1] == "O" and  empty_board[2][1] == "O":
+    i += 1
+  elif empty_board[0][2] == "O" and empty_board[1][2] == "O" and empty_board[2][2] == "O":
+    i += 1
+  else:
+     pass
+  return i
+
+
 player_one_choice()
 
 print("Current state of the board:")
 board(empty_board)
+
