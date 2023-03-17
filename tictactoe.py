@@ -9,9 +9,6 @@ def board(board):
     print(divider)
     print(board[2][0] + "|" + board[2][1] + "|" + board[2][2])
 
-print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
-board(board_index)
-
 def player_one_choice():
     print("Player One, make your move and enter a number between 1 & 9:")
     move = int(input())
@@ -98,9 +95,15 @@ def check_winner():
      pass
   return i
 
+#game
+def play_game():
+  print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
+  board(board_index)
 
-player_one_choice()
+  
+  player_one_choice()
 
-print("Current state of the board:")
-board(empty_board)
+  print("Current state of the board:")
+  board(empty_board)
 
+  player_two_choice()
