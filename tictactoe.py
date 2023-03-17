@@ -11,51 +11,73 @@ def board(board):
 
 def player_one_choice():
     print("Player One, make your move and enter a number between 1 & 9:")
-    move = int(input())
-    if move == 1 and empty_board[0][0] == ".":
-        empty_board[0][0] = "X"
-    elif move == 2 and empty_board[0][1] == ".":
-        empty_board[0][1] = "X"
-    elif move == 3 and empty_board[0][2] == ".":
-        empty_board[0][2] = "X"
-    elif move == 4 and empty_board[1][0] == ".":
-        empty_board[1][0] = "X"
-    elif move == 5 and empty_board[1][1] == ".":
-        empty_board[1][1] = "X"
-    elif move == 6 and empty_board[1][2] == ".":
-        empty_board[1][2] = "X"
-    elif move == 7 and empty_board[2][0] == ".":
-        empty_board[2][0] = "X"
-    elif move == 8 and empty_board[2][1] == ".":
-        empty_board[2][1] = "X"
-    elif move == 9 and empty_board[2][2] == ".":
-        empty_board[2][2] = "X"
-    else:
-        print("Error. Please enter a number between 1 and 9 that isn't already taken")
+    x = 0
+    while x < 1:
+      move = input()
+      if move == '1' and empty_board[0][0] == ".":
+          empty_board[0][0] = "X"
+          x += 1
+      elif move == '2' and empty_board[0][1] == ".":
+          empty_board[0][1] = "X"
+          x += 1
+      elif move == '3' and empty_board[0][2] == ".":
+          empty_board[0][2] = "X"
+          x += 1
+      elif move == '4' and empty_board[1][0] == ".":
+          empty_board[1][0] = "X"
+          x += 1
+      elif move == '5' and empty_board[1][1] == ".":
+          empty_board[1][1] = "X"
+          x += 1
+      elif move == '6' and empty_board[1][2] == ".":
+          empty_board[1][2] = "X"
+          x += 1
+      elif move == '7' and empty_board[2][0] == ".":
+          empty_board[2][0] = "X"
+          x += 1
+      elif move == '8' and empty_board[2][1] == ".":
+          empty_board[2][1] = "X"
+          x += 1
+      elif move == '9' and empty_board[2][2] == ".":
+          empty_board[2][2] = "X"
+          x += 1
+      else:
+          print("Error. Please enter a number between 1 and 9 that isn't already taken")
 
 def player_two_choice():
     print("Player Two, make your move and enter a number between 1 & 9:")
-    move = int(input())
-    if move == 1 and empty_board[0][0] == ".":
-        empty_board[0][0] = "0"
-    elif move == 2 and empty_board[0][1] == ".":
-        empty_board[0][1] = "0"
-    elif move == 3 and empty_board[0][2] == ".":
-        empty_board[0][2] = "0"
-    elif move == 4 and empty_board[1][0] == ".":
-        empty_board[1][0] = "0"
-    elif move == 5 and empty_board[1][1] == ".":
-        empty_board[1][1] = "0"
-    elif move == 6 and empty_board[1][2] == ".":
-        empty_board[1][2] = "0"
-    elif move == 7 and empty_board[2][0] == ".":
-        empty_board[2][0] = "0"
-    elif move == 8 and empty_board[2][1] == ".":
-        empty_board[2][1] = "0"
-    elif move == 9 and empty_board[2][2] == ".":
-        empty_board[2][2] = "0"
-    else:
-        print("Error. Please enter a number between 1 and 9 that isn't already taken")
+    x = 0
+    while x < 1:
+      move = input()
+      if move == '1' and empty_board[0][0] == ".":
+          empty_board[0][0] = "0"
+          x += 1
+      elif move == '2' and empty_board[0][1] == ".":
+          empty_board[0][1] = "0"
+          x += 1
+      elif move == '3' and empty_board[0][2] == ".":
+          empty_board[0][2] = "0"
+          x += 1
+      elif move == '4' and empty_board[1][0] == ".":
+          empty_board[1][0] = "0"
+          x += 1
+      elif move == '5' and empty_board[1][1] == ".":
+          empty_board[1][1] = "0"
+          x += 1
+      elif move == '6' and empty_board[1][2] == ".":
+          empty_board[1][2] = "0"
+          x += 1
+      elif move == '7' and empty_board[2][0] == ".":
+          empty_board[2][0] = "0"
+          x += 1
+      elif move == '8' and empty_board[2][1] == ".":
+          empty_board[2][1] = "0"
+          x += 1
+      elif move == '9' and empty_board[2][2] == ".":
+          empty_board[2][2] = "0"
+          x += 1
+      else:
+          print("Error. Please enter a number between 1 and 9 that isn't already taken")
 
 def check_winner():
   i = 0
@@ -95,15 +117,24 @@ def check_winner():
      pass
   return i
 
-#game
-def play_game():
-  print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
-  board(board_index)
+# # game
+# def play_game():
+#   print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
+#   board(board_index)
 
+#   win = check_winner()
+
+#   while win < 1:
+#     player_one_choice()
+#     check_winner()
+#     print("Current state of the board:")
+#     board(empty_board)
+
+#     player_two_choice()
+#     check_winner()
+#     print("Current state of the board:")
+#     board(empty_board)
   
-  player_one_choice()
+#   print("You win!")
 
-  print("Current state of the board:")
-  board(empty_board)
-
-  player_two_choice()
+# play_game()
