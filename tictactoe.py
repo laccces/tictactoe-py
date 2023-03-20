@@ -9,8 +9,13 @@ def board(board):
     print(divider)
     print(board[2][0] + "|" + board[2][1] + "|" + board[2][2])
 
+print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
+board(board_index)
+player_one_name = input("Player One, enter your name: ")
+player_two_name = input("Player Two, enter your name: ")
+
 def player_one_choice():
-    print("Player One, make your move and enter a number between 1 & 9:")
+    print("{name}, make your move and enter a number between 1 & 9:".format(name=player_one_name))
     x = 0
     while x < 1:
       move = input()
@@ -45,7 +50,7 @@ def player_one_choice():
           print("Error. Please enter a number between 1 and 9 that isn't already taken")
 
 def player_two_choice():
-    print("Player Two, make your move and enter a number between 1 & 9:")
+    print("{name}, make your move and enter a number between 1 & 9:".format(name=player_two_name))
     x = 0
     while x < 1:
       move = input()
@@ -119,8 +124,6 @@ def check_winner():
 
 # game
 def play_game():
-  print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
-  board(board_index)
   game = 0
 
   while game == 0:
@@ -131,7 +134,7 @@ def play_game():
       print("Current state of the board:")
       board(empty_board)
     else:
-      print("Game over. You win!")
+      print("Game over. {name} wins!".format(name=player_two_name))
       game = 1
     
     win = check_winner()
@@ -141,7 +144,7 @@ def play_game():
       print("Current state of the board:")
       board(empty_board)
     else:
-      print("Game over. You win!")
+      print("Game over. {name} wins!".format(name=player_one_name))
       game = 1
 
 play_game()
