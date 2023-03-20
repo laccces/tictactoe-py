@@ -118,6 +118,8 @@ def check_winner():
     i = 1
   elif empty_board[0][2] == "O" and empty_board[1][2] == "O" and empty_board[2][2] == "O":
     i = 1
+  elif empty_board[0].count(".") < 1 and empty_board[1].count(".") < 1 and empty_board[2].count(".") < 1:
+     i = 2
   else:
      pass
   return i
@@ -133,6 +135,9 @@ def play_game():
       player_one_choice()
       print("Current state of the board:")
       board(empty_board)
+    elif win == 2:
+      print("Game over, the board is full. It's a draw.")
+      game = 1
     else:
       print("Game over. {name} wins!".format(name=player_two_name))
       game = 1
@@ -143,6 +148,9 @@ def play_game():
       player_two_choice()
       print("Current state of the board:")
       board(empty_board)
+    elif win == 2:
+      print("Game over, the board is full. It's a draw.")
+      game = 1
     else:
       print("Game over. {name} wins!".format(name=player_one_name))
       game = 1
