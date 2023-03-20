@@ -82,59 +82,66 @@ def player_two_choice():
 def check_winner():
   i = 0
   if empty_board[0][0] == "X" and empty_board[0][1] == "X" and empty_board[0][2] == "X":
-    i += 1
+    i = 1
   elif empty_board[1][0] == "X" and empty_board[1][1] == "X" and empty_board[1][2] == "X":
-    i += 1
+    i = 1
   elif empty_board[2][0] == "X" and empty_board[2][1] == "X" and empty_board[2][2] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][0] == "X" and empty_board[1][1] == "X" and empty_board[2][2] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][2] == "X" and empty_board[1][1] == "X" and empty_board[2][0] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][0] == "X" and empty_board[1][0] == "X" and empty_board[2][0] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][1] == "X" and empty_board[1][1] == "X" and  empty_board[2][1] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][2] == "X" and empty_board[1][2] == "X" and empty_board[2][2] == "X":
-    i += 1
+    i = 1
   elif empty_board[0][0] == "O" and empty_board[0][1] == "O" and empty_board[0][2] == "O":
-    i += 1
+    i = 1
   elif empty_board[1][0] == "O" and empty_board[1][1] == "O" and empty_board[1][2] == "O":
-    i += 1
+    i = 1
   elif empty_board[2][0] == "O" and empty_board[2][1] == "O" and empty_board[2][2] == "O":
-    i += 1
+    i = 1
   elif empty_board[0][0] == "O" and empty_board[1][1] == "O" and empty_board[2][2] == "O":
-    i += 1
+    i = 1
   elif empty_board[0][2] == "O" and empty_board[1][1] == "O" and empty_board[2][0] == "O":
-    i += 1
+    i = 1
   elif empty_board[0][0] == "O" and empty_board[1][0] == "O" and empty_board[2][0] == "O":
-    i += 1
+    i = 1
   elif empty_board[0][1] == "O" and empty_board[1][1] == "O" and  empty_board[2][1] == "O":
-    i += 1
+    i = 1
   elif empty_board[0][2] == "O" and empty_board[1][2] == "O" and empty_board[2][2] == "O":
-    i += 1
+    i = 1
   else:
      pass
   return i
 
-# # game
-# def play_game():
-#   print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
-#   board(board_index)
+# game
+def play_game():
+  print("Tic Tac Toe. Take it in turns to pick a square and try and get three in a row before your opponent. Here's the board reference:")
+  board(board_index)
+  game = 0
 
-#   win = check_winner()
+  while game == 0:
+    win = check_winner()
 
-#   while win < 1:
-#     player_one_choice()
-#     check_winner()
-#     print("Current state of the board:")
-#     board(empty_board)
+    if win == 0:
+      player_one_choice()
+      print("Current state of the board:")
+      board(empty_board)
+    else:
+      print("Game over. You win!")
+      game = 1
+    
+    win = check_winner()
 
-#     player_two_choice()
-#     check_winner()
-#     print("Current state of the board:")
-#     board(empty_board)
-  
-#   print("You win!")
+    if win == 0:
+      player_two_choice()
+      print("Current state of the board:")
+      board(empty_board)
+    else:
+      print("Game over. You win!")
+      game = 1
 
-# play_game()
+play_game()
